@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Releases · ABRA</title>
+  <meta name="description" content="Release notes, installers and portable builds for every version of ABRA, the crystal desktop for Windows 11.">
+  <meta name="theme-color" content="#fbfbfd">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Releases · ABRA">
+  <meta property="og:description" content="Release notes, installers and portable builds for every version of ABRA.">
+  <meta property="og:image" content="https://abdeealfarizi.github.io/abra-site/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>
+    (function () {
+      var d = document.documentElement, m = "light";
+      d.classList.add("js");
+      try { m = localStorage.getItem("abra.theme") || "light"; } catch (e) {}
+      var dark = m === "dark" || (m === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
+      d.dataset.theme = dark ? "dark" : "light";
+    })();
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script defer src="assets/js/i18n.js"></script>
+  <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/github.js"></script>
+  <script defer src="assets/js/page.js"></script>
+</head>
+<body id="top">
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="index.html"><img src="assets/img/logo.webp" alt="" width="26" height="26">ABRA</a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html#features" data-i18n="nav.features">Features</a></li>
+          <li><a href="index.html#install" data-i18n="nav.install">Install</a></li>
+          <li><a href="releases.html" data-i18n="nav.releases">Releases</a></li>
+        </ul>
+      </nav>
+      <div class="nav-end">
+        <button class="icon-btn" type="button" data-lang-toggle></button>
+        <button class="icon-btn" type="button" data-theme-cycle></button>
+        <a class="icon-btn" href="https://github.com/abdeealfarizi/abra" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-github"/></svg></a>
+        <i class="nav-sep" aria-hidden="true"></i>
+        <a class="pill-donate" href="https://saweria.co/kreativadev" target="_blank" rel="noopener" data-i18n-label="nav.donate" aria-label="Buy me a coffee"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-coffee"/></svg><span data-i18n="nav.donateShort">Donate</span></a>
+        <a class="btn btn-primary btn-sm" data-dl="exe" data-main href="https://github.com/abdeealfarizi/abra/releases/latest" data-i18n-label="nav.download" aria-label="Download"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-download"/></svg><span data-i18n="nav.download">Download</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="page-head">
+      <div class="wrap">
+        <h1 data-i18n="rel.pageTitle">Every release of ABRA.</h1>
+        <p class="page-lead" data-i18n="rel.pageLead">Release notes, installers and portable builds for each version.</p>
+        <div class="page-actions">
+          <a class="btn btn-primary" data-dl="exe" data-main href="https://github.com/abdeealfarizi/abra/releases/latest">
+            <svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-download"/></svg>
+            <span><span class="btn-title" data-i18n="dl.title">Download for Windows</span><span class="btn-sub" data-dl-sub>Windows 11 · 64-bit installer</span></span>
+          </a>
+          <span class="total" data-total hidden><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-download"/></svg><span></span></span>
+        </div>
+      </div>
+    </header>
+
+    <section class="timeline" aria-label="Releases">
+      <div class="wrap narrow" id="release-list">
+        <div class="rel-skel"></div>
+        <div class="rel-skel"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-in">
+      <div class="footer-brand"><img src="assets/img/logo.webp" alt="" width="28" height="28"><div>ABRA<small data-i18n="foot.tag">A modern crystal desktop for Windows 11.</small></div></div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/abdeealfarizi/abra" target="_blank" rel="noopener" data-i18n="nav.github">GitHub</a></li>
+        <li><a href="releases.html" data-i18n="nav.releases">Releases</a></li>
+        <li><a href="https://github.com/abdeealfarizi/abra/blob/main/docs/PANDUAN.md" target="_blank" rel="noopener" data-i18n="foot.guide">User guide</a></li>
+        <li><a href="https://github.com/abdeealfarizi/abra/issues" target="_blank" rel="noopener" data-i18n="foot.bug">Report a bug</a></li>
+        <li><a href="https://github.com/abdeealfarizi/abra/blob/main/LICENSE.md" target="_blank" rel="noopener" data-i18n="foot.license">License</a></li>
+        <li><a href="https://saweria.co/kreativadev" target="_blank" rel="noopener" data-i18n="nav.donate">Buy me a coffee</a></li>
+      </ul>
+      <p class="footer-fine"><span data-i18n="foot.by">Made by kreativa.dev</span>. <span data-i18n="foot.fine">ABRA is an independent, fan-made project. It is not affiliated with, endorsed by or sponsored by Apple Inc. Free for noncommercial use under the PolyForm Noncommercial License 1.0.0. Inter font by Rasmus Andersson, SIL Open Font License.</span></p>
+    </div>
+  </footer>
+</body>
+</html>

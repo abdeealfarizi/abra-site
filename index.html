@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ABRA · A modern crystal desktop for Windows 11</title>
+  <meta name="description" content="ABRA turns Windows 11 into a clean crystal desktop: Deck, Visor, Rail, Quick Panel, Quick Search, Scene and Widgets. Native Rust, about 15 MB of RAM, no telemetry. Free download.">
+  <meta name="theme-color" content="#fbfbfd">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ABRA · A modern crystal desktop for Windows 11">
+  <meta property="og:description" content="Deck, Visor, Rail, Quick Panel, Quick Search, Scene and Widgets. Native, written in Rust, about 15 MB of RAM. Free download.">
+  <meta property="og:image" content="https://abdeealfarizi.github.io/abra-site/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>
+    (function () {
+      var d = document.documentElement, m = "light";
+      d.classList.add("js");
+      try { m = localStorage.getItem("abra.theme") || "light"; } catch (e) {}
+      var dark = m === "dark" || (m === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
+      d.dataset.theme = dark ? "dark" : "light";
+    })();
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script defer src="assets/js/i18n.js"></script>
+  <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/github.js"></script>
+  <script defer src="assets/js/page.js"></script>
+</head>
+<body id="top">
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top"><img src="assets/img/logo.webp" alt="" width="26" height="26">ABRA</a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="#features" data-i18n="nav.features">Features</a></li>
+          <li><a href="#install" data-i18n="nav.install">Install</a></li>
+          <li><a href="releases.html" data-i18n="nav.releases">Releases</a></li>
+        </ul>
+      </nav>
+      <div class="nav-end">
+        <button class="icon-btn" type="button" data-lang-toggle></button>
+        <button class="icon-btn" type="button" data-theme-cycle></button>
+        <a class="icon-btn" href="https://github.com/abdeealfarizi/abra" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-github"/></svg></a>
+        <i class="nav-sep" aria-hidden="true"></i>
+        <a class="pill-donate" href="https://saweria.co/kreativadev" target="_blank" rel="noopener" data-i18n-label="nav.donate" aria-label="Buy me a coffee"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-coffee"/></svg><span data-i18n="nav.donateShort">Donate</span></a>
+        <a class="btn btn-primary btn-sm" data-dl="exe" data-main href="https://github.com/abdeealfarizi/abra/releases/latest" data-i18n-label="nav.download" aria-label="Download"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-download"/></svg><span data-i18n="nav.download">Download</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="story" id="story">
+      <div class="wrap story-grid">
+        <div class="story-text">
+          <article class="step step-hero active" data-scene="idle" id="download">
+            <h1 data-i18n="hero.title">Windows 11, in crystal.</h1>
+            <p class="lead" data-i18n="hero.lead">Deck, Visor, Rail and more. Native, tiny, no account.</p>
+            <div class="cta">
+              <a class="btn btn-primary" data-dl="exe" data-main href="https://github.com/abdeealfarizi/abra/releases/latest">
+                <svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-download"/></svg>
+                <span><span class="btn-title" data-i18n="dl.title">Download for Windows</span><span class="btn-sub" data-dl-sub>Windows 11 · 64-bit installer</span></span>
+              </a>
+              <a class="text-link" data-dl="zip" data-main href="https://github.com/abdeealfarizi/abra/releases/latest"><span>Portable .zip</span></a>
+              <a class="text-link" href="releases.html"><span data-i18n="dl.all">All releases</span> →</a>
+            </div>
+            <p class="reqs"><span data-i18n="req.win">Windows 11 (build 22000+)</span> · <span data-i18n="req.arch">64-bit</span> · <span data-i18n="req.admin">No admin needed</span> · <span data-i18n="req.early">Early Access</span></p>
+          </article>
+
+          <article class="step" data-scene="deck" id="features">
+            <span class="kicker">Deck</span>
+            <h2 data-i18n="c.deck.h">Your apps, always within reach.</h2>
+            <p data-i18n="f.deck.d">A magnifying app bar with live window previews, a Funnel or Scale minimize effect, a Downloads stack and a crystal Trash.</p>
+          </article>
+
+          <article class="step" data-scene="visor" id="visor-step">
+            <span class="kicker">Visor</span>
+            <h2 data-i18n="c.visor.h">A pill that knows what is going on.</h2>
+            <p data-i18n="f.visor.d">A pill at the top of the screen that shows what is going on: music with live lyrics, downloads, focus sessions, tasks and files. Float it and it becomes the Capsule.</p>
+          </article>
+
+          <article class="step" data-scene="qp" id="qp-step">
+            <span class="kicker">Quick Panel</span>
+            <h2 data-i18n="c.qp.h">Every control in one crystal panel.</h2>
+            <p data-i18n="f.qp.d">Wi-Fi, Bluetooth, Display, Sound, Playing and more. Drag controls to rearrange them and drag the crystal corner to resize.</p>
+          </article>
+
+          <article class="step" data-scene="search" id="search-step">
+            <span class="kicker">Quick Search</span>
+            <h2 data-i18n="c.qs.h">Find anything, from the keyboard.</h2>
+            <p data-i18n="f.qs.d">Press Ctrl + Space to search apps, files, actions and clipboard, with a built-in calculator.</p>
+          </article>
+
+          <article class="step" data-scene="widgets" id="widgets-step">
+            <span class="kicker">Widgets</span>
+            <h2 data-i18n="c.widgets.h">Glanceable, right on the desktop.</h2>
+            <p data-i18n="f.widgets.d">Clock, Today, Month, Battery, System Monitor and more, in the Original or Crystal material.</p>
+          </article>
+
+          <article class="step" data-scene="look" id="appearance">
+            <span class="kicker" data-i18n="look.appearance">Appearance</span>
+            <h2 data-i18n="look.title">Make it yours.</h2>
+            <p data-i18n="look.lead">The same accent colors and themes as ABRA's Settings. Try them here; this whole page follows along.</p>
+            <div class="controls">
+              <div class="seg" role="group">
+                <button type="button" data-theme-set="auto"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-auto"/></svg><span data-i18n="look.auto">Auto</span></button>
+                <button type="button" data-theme-set="light"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-sun"/></svg><span data-i18n="look.light">Light</span></button>
+                <button type="button" data-theme-set="dark"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-moon"/></svg><span data-i18n="look.dark">Dark</span></button>
+              </div>
+              <div class="swatches" data-swatches></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="story-stage">
+          <div class="screen" id="screen" data-scene="idle" role="group" aria-label="Interactive ABRA demo" data-i18n-label="c.demoLabel">
+            <div class="wp" aria-hidden="true"></div>
+            <div class="s-in">
+              <div class="m-rail g" aria-hidden="true">
+                <span class="m-brand"><img src="assets/img/logo.webp" alt="" width="16" height="16">ABRA</span>
+                <span class="m-menu"><i>File</i><i>Edit</i><i>View</i></span>
+                <span class="m-status"><svg class="ic"><use href="assets/img/icons.svg#i-wifi"/></svg><svg class="ic"><use href="assets/img/icons.svg#i-battery"/></svg><time data-clock></time></span>
+              </div>
+
+              <button class="visor" id="visor" type="button" data-mode="idle">
+                <span class="v-mode v-idle">
+                  <img src="assets/img/logo.webp" alt="" width="16" height="16">
+                  <span data-visor-idle>ABRA for Windows 11</span>
+                  <i class="v-dot"></i>
+                </span>
+                <span class="v-mode v-music">
+                  <span class="v-left">
+                    <span class="v-art"></span>
+                    <span class="v-ctl"><svg class="ic"><use href="assets/img/icons.svg#i-prev"/></svg><svg class="ic"><use href="assets/img/icons.svg#i-pause"/></svg><svg class="ic"><use href="assets/img/icons.svg#i-next"/></svg></span>
+                  </span>
+                  <span class="v-lyrics">
+                    <span class="v-ly prev" data-ly="prev"></span>
+                    <span class="v-ly cur" data-ly="cur"></span>
+                    <span class="v-ly next" data-ly="next"></span>
+                  </span>
+                </span>
+                <span class="v-mode v-timer">
+                  <span class="v-t-main">
+                    <span class="v-t-label" data-i18n="m.timer">Focus timer</span>
+                    <b class="v-t-time" data-timer>24:56</b>
+                    <span class="v-t-bar"><i data-timer-bar></i></span>
+                  </span>
+                  <span class="v-t-event" data-i18n="m.event">15:00 Design review</span>
+                </span>
+                <span class="v-mode visor-dl">
+                  <span class="visor-dl-badge"><svg class="ic"><use href="assets/img/icons.svg#i-download"/></svg></span>
+                  <span class="visor-dl-body">
+                    <span class="visor-dl-name" data-visor-name></span>
+                    <span class="visor-bar"><i></i></span>
+                    <span class="visor-dl-meta"><span data-visor-status></span><span data-visor-size></span></span>
+                  </span>
+                </span>
+              </button>
+
+              <div class="m-widgets" aria-hidden="true">
+                <div class="mw mw-clock g">
+                  <svg viewBox="0 0 100 100">
+                    <g class="ticks" data-clock-ticks></g>
+                    <line class="hand hour" data-hand="h" x1="50" y1="50" x2="50" y2="28"/>
+                    <line class="hand min" data-hand="m" x1="50" y1="50" x2="50" y2="15"/>
+                    <line class="hand sec" data-hand="s" x1="50" y1="58" x2="50" y2="12"/>
+                    <circle class="pin" cx="50" cy="50" r="2.6"/>
+                  </svg>
+                </div>
+                <div class="mw mw-cal g">
+                  <b data-cal-month></b>
+                  <strong class="cal-day" data-cal-day></strong>
+                  <span class="cal-wd" data-cal-wd></span>
+                  <div class="cal-grid" data-cal-grid></div>
+                </div>
+                <div class="mw mw-sys mw-extra g" style="--k:1">
+                  <b data-i18n="m.system">System</b>
+                  <dl>
+                    <div><dt data-i18n="m.cpu">CPU</dt><dd>12%</dd><i style="--v:12%"></i></div>
+                    <div><dt data-i18n="m.ram">RAM</dt><dd>~15 MB</dd><i style="--v:7%"></i></div>
+                  </dl>
+                </div>
+                <div class="mw mw-rel mw-extra g" style="--k:2">
+                  <b data-i18n="m.latest">Latest</b>
+                  <strong data-rel-ver>ABRA</strong>
+                  <span data-rel-date></span>
+                </div>
+              </div>
+
+              <aside class="m-qp g" aria-label="Quick Panel">
+                <div class="qp-grid">
+                  <button class="qp-t" type="button" aria-pressed="true"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-wifi"/></svg><span data-i18n="m.wifi">Wi-Fi</span></button>
+                  <button class="qp-t" type="button" aria-pressed="true"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-bt"/></svg><span data-i18n="m.bt">Bluetooth</span></button>
+                  <button class="qp-t" type="button" aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-bolt"/></svg><span data-i18n="m.dnd">Do not disturb</span></button>
+                  <button class="qp-t" type="button" aria-pressed="false" data-dark-toggle><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-moon"/></svg><span data-i18n="m.dark">Dark mode</span></button>
+                </div>
+                <label class="qp-s"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-sun"/></svg><span data-i18n="m.display">Display</span><input type="range" min="0" max="100" value="72" style="--v:72%"></label>
+                <label class="qp-s"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-volume"/></svg><span data-i18n="m.sound">Sound</span><input type="range" min="0" max="100" value="45" style="--v:45%"></label>
+              </aside>
+
+              <div class="m-search" aria-hidden="true">
+                <div class="ms-bar g"><svg class="ic"><use href="assets/img/icons.svg#i-search"/></svg><span class="ms-q" data-typed></span><i class="caret"></i><span class="ms-ph" data-i18n="m.search">Quick Search</span></div>
+                <ul class="ms-list g">
+                  <li class="hit"><span class="ms-ic" style="--c:#ff9f0a"><svg class="ic"><use href="assets/img/icons.svg#i-calc"/></svg></span><span data-i18n="m.calc">Calculator</span><strong>= 432</strong></li>
+                  <li><span class="ms-ic" style="--c:#8e8e93"><svg class="ic"><use href="assets/img/icons.svg#i-cog"/></svg></span><span data-i18n="m.settings">Settings</span></li>
+                  <li><span class="ms-ic" style="--c:#5ac8fa"><svg class="ic"><use href="assets/img/icons.svg#i-folder"/></svg></span><span data-i18n="m.downloads">Downloads</span></li>
+                </ul>
+              </div>
+
+              <div class="m-deck g" aria-hidden="true">
+                <span class="mt" style="--c:#0a84ff;--i:0"><svg class="ic"><use href="assets/img/icons.svg#i-home"/></svg><i class="run"></i></span>
+                <span class="mt" style="--c:#af52de;--i:1"><svg class="ic"><use href="assets/img/icons.svg#i-grid"/></svg></span>
+                <span class="mt" style="--c:#ff9f0a;--i:2"><svg class="ic"><use href="assets/img/icons.svg#i-notes"/></svg><i class="run"></i></span>
+                <span class="mt" style="--c:#30d158;--i:3"><svg class="ic"><use href="assets/img/icons.svg#i-shield"/></svg></span>
+                <span class="mt" style="--c:#5ac8fa;--i:4"><svg class="ic"><use href="assets/img/icons.svg#i-folder"/></svg></span>
+                <span class="mt" style="--c:#8e8e93;--i:5"><svg class="ic"><use href="assets/img/icons.svg#i-cog"/></svg></span>
+                <i class="m-sep"></i>
+                <span class="mt acc" style="--c:var(--accent);--i:6"><svg class="ic"><use href="assets/img/icons.svg#i-download"/></svg></span>
+              </div>
+            </div>
+          </div>
+          <p class="demo-note" data-i18n="c.demoNote">A working mock-up, not a video. Hover the Deck, tap the Visor, flip the switches.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block center" id="real">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 data-i18n="c.real.t">The real thing.</h2>
+          <p data-i18n="c.real.d">A screenshot of ABRA running on Windows 11.</p>
+        </div>
+        <img class="real-shot reveal" src="assets/img/desktop.webp" width="1920" height="1080" alt="ABRA desktop with the Rail, Visor, Deck and widgets" data-i18n-alt="hero.shotAlt" loading="lazy">
+      </div>
+    </section>
+
+    <section class="block" id="inside">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 data-i18n="c.in.t">Straight from ABRA.</h2>
+        </div>
+        <div class="in-grid">
+          <figure class="in-deck reveal">
+            <div class="pic"><img src="assets/img/deck.webp" width="1321" height="166" alt="The Deck with app icons, Downloads and Trash" loading="lazy"></div>
+            <h3>Deck</h3>
+            <p data-i18n="c.in.deck.d">A magnifying app bar with live previews and a Downloads stack.</p>
+          </figure>
+          <figure class="in-qp reveal">
+            <div class="pic"><img src="assets/img/quick-panel.webp" width="483" height="788" alt="Quick Panel with Wi-Fi, Bluetooth, Focus, Display and Sound" loading="lazy"></div>
+            <h3>Quick Panel</h3>
+            <p data-i18n="c.in.qp.d">Wi-Fi, Bluetooth, sliders and more. Drag to rearrange.</p>
+          </figure>
+          <figure class="in-set reveal">
+            <div class="pic"><img src="assets/img/settings.webp" width="975" height="700" alt="ABRA Settings, Appearance page with presets and accent colors" loading="lazy"></div>
+            <h3>Settings</h3>
+            <p data-i18n="c.in.set.d">Presets, accent colors, themes and fonts in one sidebar.</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="visor-close">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 data-i18n="c.visor2.t">The Visor, up close.</h2>
+          <p data-i18n="c.visor2.d">Music, files, tasks and more, one page at a time.</p>
+        </div>
+        <div class="close-grid">
+          <figure class="reveal">
+            <div class="pic"><img src="assets/img/visor-play.webp" width="688" height="270" alt="Now Playing page of the Visor with lyrics" loading="lazy"></div>
+            <h3 data-i18n="c.play.t">Now Playing</h3>
+            <p data-i18n="c.play.d">Album art, live synced lyrics and full playback controls with a seek bar.</p>
+          </figure>
+          <figure class="reveal">
+            <div class="pic"><img src="assets/img/visor-shelf.webp" width="688" height="228" alt="Quick actions card on the File Shelf page" loading="lazy"></div>
+            <h3 data-i18n="c.qa.t">Quick actions</h3>
+            <p data-i18n="c.qa.d">Drop a file on the Visor to shrink an image by half, convert it to JPG or PNG, or zip it. Results are saved next to the originals.</p>
+          </figure>
+          <figure class="reveal">
+            <div class="pic"><img src="assets/img/visor-tasks.webp" width="688" height="260" alt="Task List page of the Visor" loading="lazy"></div>
+            <h3 data-i18n="c.tasks.t">Tasks and reminders</h3>
+            <p data-i18n="c.tasks.d">Add a task from anywhere with Ctrl + Alt + N and see it right in the Visor.</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="more">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 data-i18n="c.more.t">And a few more things.</h2>
+        </div>
+        <div class="more-grid">
+          <figure class="reveal">
+            <div class="pic"><img src="assets/img/visor-qr.webp" width="688" height="234" alt="Send to phone with a QR code" loading="lazy"></div>
+            <h3 data-i18n="f.shelf.t">Shelf &amp; Send to phone</h3>
+            <p data-i18n="f.shelf.d">Drop files on the Visor to keep them on the Shelf, or scan a QR code to send them to any Android or iPhone. No app needed.</p>
+          </figure>
+          <figure class="reveal">
+            <div class="pic"><img src="assets/img/visor-capsule.webp" width="625" height="132" alt="The Visor in the Capsule shape" loading="lazy"></div>
+            <h3 data-i18n="f.capsule.t">Capsule</h3>
+            <p data-i18n="f.capsule.d">Float the Visor and it becomes a Capsule. Choose which modules it shows, in any order, even side by side.</p>
+          </figure>
+          <figure class="reveal">
+            <div class="pic"><img src="assets/img/apps.webp" width="991" height="648" alt="App Grid" loading="lazy"></div>
+            <h3 data-i18n="f.apps.t">App Grid</h3>
+            <p data-i18n="f.apps.d">Every installed app in a full-screen crystal grid, sorted into groups.</p>
+          </figure>
+        </div>
+        <ul class="extras reveal">
+          <li><span data-i18n="chip.overview">Overview</span><kbd>Ctrl ↑</kbd></li>
+          <li><span>Quick Search</span><kbd>Ctrl Space</kbd></li>
+          <li><span>App Grid</span><kbd>Ctrl Shift Space</kbd></li>
+          <li><span data-i18n="chip.task">Add a task</span><kbd>Ctrl Alt N</kbd></li>
+          <li><span data-i18n="chip.presets">6 presets: Default, Prism, Neon, Aurora, Stealth, Pixel</span></li>
+          <li><span data-i18n="chip.focus">Focus sessions: Work, Study, Reading</span></li>
+          <li><span data-i18n="chip.clip">Clipboard stack with pins</span></li>
+          <li><span data-i18n="chip.meet">Meeting companion with a Join button</span></li>
+          <li><span data-i18n="chip.screens">Multi-screen, with mixed scaling</span></li>
+          <li><span data-i18n="chip.themes">Community themes (.abratheme)</span></li>
+          <li><span data-i18n="chip.scene">Scene: live tilted window cards</span></li>
+          <li><span data-i18n="chip.corners">Screen Corners</span></li>
+          <li><span data-i18n="chip.hud">Volume &amp; brightness HUD</span></li>
+          <li><span data-i18n="chip.anim">Window open &amp; close animations</span></li>
+          <li><span data-i18n="chip.lang">English &amp; Indonesian</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block center" id="privacy">
+      <div class="wrap narrow">
+        <div class="head reveal">
+          <h2 data-i18n="priv.title">ABRA does not collect, store or send any data about you.</h2>
+          <p data-i18n="priv.body">No telemetry, no analytics, no account and no ads. Everything stays on your PC. ABRA only reaches out for two optional things: a lyrics lookup on LRCLIB when a song has no local lyrics file, and a check for new versions on GitHub about every 12 hours. Both can be turned off.</p>
+        </div>
+        <dl class="facts reveal">
+          <div><dt>~15 MB</dt><dd data-i18n="stat.ram">of RAM at idle</dd></div>
+          <div><dt>0</dt><dd data-i18n="stat.tele">telemetry, analytics or ads</dd></div>
+          <div><dt data-i18n="stat.adminB">No admin</dt><dd data-i18n="stat.admin">per-user install, clean uninstall</dd></div>
+          <div><dt data-i18n="stat.rustB">Native Rust</dt><dd data-i18n="stat.rust">no Electron, no web view, no .NET</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="block" id="install">
+      <div class="wrap narrow">
+        <div class="head reveal">
+          <h2 data-i18n="inst.title">Up and running in a minute.</h2>
+          <p data-i18n="inst.lead">Requires Windows 11 (build 22000 or newer), 64-bit.</p>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><h3 data-i18n="inst.s1t">Download</h3><p data-i18n="inst.s1d">Get ABRA-Setup.exe for a per-user install, or the portable .zip. For the portable one, keep abra.exe, abra-guard.exe and the fonts folder together.</p></li>
+          <li class="reveal"><h3 data-i18n="inst.s2t">Run the installer</h3><p data-i18n="inst.s2d">No administrator rights. Pick a Start menu shortcut and launch at sign-in if you like.</p></li>
+          <li class="reveal"><h3 data-i18n="inst.s3t">Meet your new desktop</h3><p data-i18n="inst.s3d">The Rail, Visor and Deck appear. Open Settings by clicking the logo in the Rail.</p></li>
+        </ol>
+        <div class="notes">
+          <p class="note reveal" data-i18n-html="inst.early"><b>Early Access.</b> ABRA is still in active development, so things can break or change between versions. Bugs and ideas are welcome on GitHub.</p>
+          <p class="note warn reveal" data-i18n-html="inst.smart"><b>Windows SmartScreen may warn about an unsigned app.</b> Choose <kbd>More info</kbd> → <kbd>Run anyway</kbd>. Only do this for files downloaded from this site or the official GitHub releases.</p>
+          <p class="note warn reveal" data-i18n-html="inst.av"><b>Antivirus flags ABRA?</b> It is a false positive: ABRA is unsigned and new, and a desktop shell has to do things scanners find unusual, like hiding the taskbar and hooking Alt+Tab. Compare the SHA256 shown next to each file on the Releases page before you run it.</p>
+          <p class="note reveal" data-i18n-html="inst.upgrade"><b>Updating?</b> Install the new version over the old one. Your settings, pinned apps and Quick Panel layout are kept. From 0.5.0 on, ABRA also offers new versions itself. To quit, right-click an empty part of the Deck → <kbd>Quit ABRA</kbd>; the taskbar comes back automatically.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="releases">
+      <div class="wrap narrow">
+        <div class="head row reveal">
+          <h2 data-i18n="rel.title">Release notes</h2>
+          <a class="text-link" href="releases.html"><span data-i18n="rel.all">See all releases</span> →</a>
+        </div>
+        <div id="latest-release"><div class="rel-skel"></div></div>
+      </div>
+    </section>
+    <section class="block center" id="support">
+      <div class="wrap narrow">
+        <div class="head reveal">
+          <h2 data-i18n="sup.title">Support ABRA</h2>
+          <p data-i18n="sup.body">ABRA is free and built in spare time by kreativa.dev. If it makes your desktop nicer, you can buy me a coffee. It keeps the project going. Terima kasih!</p>
+        </div>
+        <div class="cta-row reveal">
+          <a class="btn btn-donate" href="https://saweria.co/kreativadev" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-coffee"/></svg><span data-i18n="nav.donate">Buy me a coffee</span></a>
+          <a class="btn btn-gh" href="https://github.com/abdeealfarizi/abra" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="assets/img/icons.svg#i-github"/></svg><span data-i18n="sup.gh">Star on GitHub</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-in">
+      <div class="footer-brand"><img src="assets/img/logo.webp" alt="" width="28" height="28"><div>ABRA<small data-i18n="foot.tag">A modern crystal desktop for Windows 11.</small></div></div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/abdeealfarizi/abra" target="_blank" rel="noopener" data-i18n="nav.github">GitHub</a></li>
+        <li><a href="releases.html" data-i18n="nav.releases">Releases</a></li>
+        <li><a href="https://github.com/abdeealfarizi/abra/blob/main/docs/PANDUAN.md" target="_blank" rel="noopener" data-i18n="foot.guide">User guide</a></li>
+        <li><a href="https://github.com/abdeealfarizi/abra/issues" target="_blank" rel="noopener" data-i18n="foot.bug">Report a bug</a></li>
+        <li><a href="https://github.com/abdeealfarizi/abra/blob/main/LICENSE.md" target="_blank" rel="noopener" data-i18n="foot.license">License</a></li>
+        <li><a href="https://saweria.co/kreativadev" target="_blank" rel="noopener" data-i18n="nav.donate">Buy me a coffee</a></li>
+      </ul>
+      <p class="footer-fine"><span data-i18n="foot.by">Made by kreativa.dev</span>. <span data-i18n="foot.fine">ABRA is an independent, fan-made project. It is not affiliated with, endorsed by or sponsored by Apple Inc. Free for noncommercial use under the PolyForm Noncommercial License 1.0.0. Inter font by Rasmus Andersson, SIL Open Font License.</span></p>
+    </div>
+  </footer>
+</body>
+</html>

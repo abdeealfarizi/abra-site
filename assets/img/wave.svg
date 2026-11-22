@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8ec2ff"/>
+      <stop offset=".45" stop-color="#2f7bff"/>
+      <stop offset="1" stop-color="#0731a8"/>
+    </linearGradient>
+    <linearGradient id="w1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#d9e8ff" stop-opacity=".15"/>
+    </linearGradient>
+    <linearGradient id="w2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a84ff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#0526a0" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="w3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff9f0a" stop-opacity="0"/>
+      <stop offset=".6" stop-color="#ffb340" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ff9f0a" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="softer" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <circle cx="1250" cy="180" r="320" fill="#bcd9ff" opacity=".45" filter="url(#softer)"/>
+  <path d="M0 640 C 320 520, 560 470, 860 560 S 1380 760, 1600 600 L1600 1000 L0 1000 Z" fill="url(#w2)" filter="url(#soft)"/>
+  <path d="M-40 560 C 300 420, 620 400, 900 500 S 1400 690, 1640 520" fill="none" stroke="url(#w1)" stroke-width="60" filter="url(#soft)"/>
+  <path d="M-40 600 C 320 470, 640 450, 920 540 S 1420 720, 1640 560" fill="none" stroke="#ffffff" stroke-opacity=".6" stroke-width="6" filter="url(#soft)"/>
+  <path d="M-40 700 C 340 590, 660 580, 960 660 S 1440 830, 1640 700" fill="none" stroke="url(#w3)" stroke-width="22" filter="url(#soft)"/>
+  <path d="M0 820 C 360 720, 700 730, 1000 800 S 1450 930, 1600 860 L1600 1000 L0 1000 Z" fill="#04208a" opacity=".85" filter="url(#soft)"/>
+</svg>
